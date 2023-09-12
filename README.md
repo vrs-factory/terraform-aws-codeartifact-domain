@@ -8,7 +8,8 @@ Terraform module to provision a domain for CodeArtifact Repositories.
 module "repository_domain" {
   source = "git::https://github.com/vrs-factory/terraform-aws-codeartifact-domain?ref=v1.0.0"
 
-  name = "my-project"
+  name          = "my-project"
+  dedicated_kms = true
 
   tags = {
     Project = "my-project"
