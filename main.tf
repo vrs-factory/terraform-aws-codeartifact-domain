@@ -8,7 +8,7 @@ resource "aws_kms_key" "default" {
 
 resource "aws_codeartifact_domain" "default" {
   domain         = var.name
-  encryption_key = var.dedicated_kms ? aws_kms_key.default.arn : null
+  encryption_key = var.dedicated_kms ? aws_kms_key.default[0].arn : null
 
   tags = var.tags
 }
